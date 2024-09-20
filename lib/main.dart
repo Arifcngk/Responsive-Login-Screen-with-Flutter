@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:responsive_auth_screen/login_scree.dart';
+import 'package:responsive_auth_screen/login_screen.dart';
 import 'package:responsive_auth_screen/palette.dart';
 
 void main() {

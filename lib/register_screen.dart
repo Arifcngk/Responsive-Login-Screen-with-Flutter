@@ -3,11 +3,20 @@ import 'package:responsive_auth_screen/widgets/gradient_btn.dart';
 import 'package:responsive_auth_screen/widgets/login_field.dart';
 import 'package:responsive_auth_screen/widgets/socail_button.dart';
 
-class LoginScreen extends StatelessWidget {
-  const LoginScreen({super.key});
+class RegisterScreen extends StatefulWidget {
+  const RegisterScreen({super.key});
 
   @override
+  State<RegisterScreen> createState() => _RegisterScreenState();
+}
+
+class _RegisterScreenState extends State<RegisterScreen> {
+  @override
   Widget build(BuildContext context) {
+    TextEditingController _emailController = TextEditingController();
+    TextEditingController _passwordController = TextEditingController();
+    TextEditingController _nameController = TextEditingController();
+
     return Scaffold(
       body: SingleChildScrollView(
         child: Center(
@@ -15,7 +24,7 @@ class LoginScreen extends StatelessWidget {
             children: [
               Image.asset('assets/images/signin_balls.png'),
               const Text(
-                'Sign in.',
+                'Register.',
                 style: TextStyle(
                   fontSize: 50,
                   fontWeight: FontWeight.bold,
@@ -34,9 +43,20 @@ class LoginScreen extends StatelessWidget {
               const SizedBox(height: 15),
               const Text("or", style: TextStyle(fontSize: 17)),
               const SizedBox(height: 15),
-              const LoginFieldWidget(hintText: "Email"),
+              LoginFieldWidget(
+                hintText: "Name",
+                customController: _nameController,
+              ),
+              const SizedBox(height: 15),
+              LoginFieldWidget(
+                hintText: "Email",
+                customController: _emailController,
+              ),
               const SizedBox(height: 20),
-              const LoginFieldWidget(hintText: "Password"),
+              LoginFieldWidget(
+                hintText: "Password",
+                customController: _passwordController,
+              ),
               const SizedBox(height: 20),
               const GradientBtnWidget(),
             ],
